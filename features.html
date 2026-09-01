@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="IRIS features — model flexibility, memory and database, voice interaction, system tools, web capabilities, and a PySide6 desktop interface.">
+  <title>Features — IRIS</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-mark">IRIS</span><span class="brand-subtitle">Intelligent Response &amp; Interaction System</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="site-nav" id="siteNav">
+      <a href="index.html">Home</a><a href="about.html">About</a><a class="active" href="features.html">Features</a><a href="architecture.html">Architecture</a><a href="modes.html">Modes</a><a href="documentation.html">Documentation</a><a class="nav-github" href="https://github.com/lokendradhote/IRIS" target="_blank" rel="noopener">GitHub ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero page-shell">
+      <p class="eyebrow">CURRENTLY IMPLEMENTED AI FEATURES</p>
+      <h1>What IRIS can do.</h1>
+      <p class="lead">A system layer around AI — not a wrapper locked to one model.</p>
+      <p>
+        The following describes the current feature set and the architectural direction
+        represented by the project.
+      </p>
+    </section>
+
+    <section class="section page-shell">
+      <!-- Feature 01: Model flexibility -->
+      <article class="feature-row">
+        <div class="feature-number">01</div>
+        <div>
+          <p class="eyebrow">MODEL FLEXIBILITY</p>
+          <h2>IRIS is not dependent on a single model.</h2>
+          <p>
+            The architecture is designed so the underlying AI model can be changed.
+            Whether the selected model is local or cloud-based, IRIS is not built around
+            a permanent dependency on one specific model or provider.
+          </p>
+          <p>
+            This makes the model an interchangeable intelligence component rather than
+            the entire identity of the assistant.
+          </p>
+        </div>
+      </article>
+
+      <!-- Feature 02: Memory and database -->
+      <article class="feature-row">
+        <div class="feature-number">02</div>
+        <div>
+          <p class="eyebrow">MEMORY &amp; DATABASE</p>
+          <h2>Persistent memory and conversation data are separate concepts.</h2>
+          <p>
+            <strong>Memory</strong> contains information that the user explicitly asks IRIS
+            to remember, as well as information IRIS may decide to save as a persistent fact.
+          </p>
+          <p>
+            <strong>Database</strong> stores chat and conversation data. Keeping these
+            concepts separate makes the system easier to manage and evolve.
+          </p>
+        </div>
+      </article>
+
+      <!-- Feature 03: Voice -->
+      <article class="feature-row">
+        <div class="feature-number">03</div>
+        <div>
+          <p class="eyebrow">VOICE</p>
+          <h2>Voice input can remain user-controlled.</h2>
+          <p>
+            In normal voice input, speech is converted to text and placed into the input
+            box. The user can then modify it, delete it, or send it — the user remains in control.
+          </p>
+          <div class="pipeline">
+            <span>Listening</span><b>→</b><span>User Input</span><b>→</b><span>STT</span><b>→</b><span>IRIS Processing</span><b>→</b><span>Output</span><b>→</b><span>TTS</span><b>→</b><span>Voice Output</span><b>↻</b>
+          </div>
+          <p>
+            In Voice-to-Voice mode, IRIS can continue the loop by listening again after
+            producing the voice output.
+          </p>
+        </div>
+      </article>
+
+      <!-- Feature 04: Tools -->
+      <article class="feature-row">
+        <div class="feature-number">04</div>
+        <div>
+          <p class="eyebrow">TOOLS</p>
+          <h2>IRIS can interact with the local system and the web.</h2>
+          <div class="mini-grid">
+            <div class="mini-card"><strong>System Status</strong><span>CPU, RAM, battery and other system telemetry.</span></div>
+            <div class="mini-card"><strong>Application Launching</strong><span>Search for applications available on the device and launch them.</span></div>
+            <div class="mini-card"><strong>Web Search</strong><span>Search the web for information and current sources.</span></div>
+            <div class="mini-card"><strong>File Operations</strong><span>Open, find and work with files on the device.</span></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Feature 05: Web -->
+      <article class="feature-row">
+        <div class="feature-number">05</div>
+        <div>
+          <p class="eyebrow">WEB CAPABILITIES</p>
+          <h2>Web grounding can extend what the model knows.</h2>
+          <p>
+            When web capabilities are used, IRIS can obtain information from web search
+            and use the selected AI model to process that information into an answer.
+            This creates a path between current web information and the assistant's reasoning.
+          </p>
+        </div>
+      </article>
+
+      <!-- Feature 06: Interface -->
+      <article class="feature-row">
+        <div class="feature-number">06</div>
+        <div>
+          <p class="eyebrow">DESKTOP INTERFACE</p>
+          <h2>A configurable PySide6 desktop experience.</h2>
+          <p>
+            The current interface includes chat/workspace controls, voice-to-voice state,
+            engine state, settings, memory management, layout/theme controls, data and
+            storage controls, project folders, pinned chats and conversation management.
+          </p>
+          <div class="tag-list">
+            <span>PySide6</span><span>Dark / Light UI</span><span>Accent Themes</span><span>Memory Vault</span><span>Data &amp; Storage</span><span>Project Workspaces</span>
+          </div>
+          <p class="note">
+            Some settings visible in the current interface are still subject to further
+            implementation and verification. The documentation should distinguish
+            implemented functionality from planned controls.
+          </p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="page-shell footer-inner"><div><strong>IRIS</strong><p>Intelligent Response &amp; Interaction System</p></div><div class="footer-links"><a href="about.html">About</a><a href="architecture.html">Architecture</a><a href="modes.html">Modes</a><a href="documentation.html">Docs</a><a href="https://github.com/lokendradhote/IRIS" target="_blank" rel="noopener">GitHub ↗</a></div><p class="copyright">© 2026 IRIS Project</p></div></footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

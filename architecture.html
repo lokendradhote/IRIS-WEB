@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="IRIS architecture — the IRIS Core, local and cloud engines, tools, memory, database, voice pipeline and web grounding.">
+  <title>Architecture — IRIS</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-mark">IRIS</span><span class="brand-subtitle">Intelligent Response &amp; Interaction System</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="site-nav" id="siteNav">
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="features.html">Features</a><a class="active" href="architecture.html">Architecture</a><a href="modes.html">Modes</a><a href="documentation.html">Documentation</a><a class="nav-github" href="https://github.com/lokendradhote/IRIS" target="_blank" rel="noopener">GitHub ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero page-shell">
+      <p class="eyebrow">SYSTEM ARCHITECTURE</p>
+      <h1>The IRIS Core is the router.</h1>
+      <p class="lead">A hybrid architecture where execution can move between local and cloud intelligence.</p>
+    </section>
+
+    <section class="section page-shell">
+      <div class="architecture-diagram">
+        <div class="arch-node user-node"><span>User</span><small>Input / Files / Voice</small></div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-node core-node"><span>IRIS Core</span><small>Routing • Context • Orchestration</small></div>
+        <div class="arch-branches">
+          <div class="arch-node"><span>Local Engine</span><small>On-device inference</small></div>
+          <div class="arch-node"><span>Cloud Engine</span><small>Remote model inference</small></div>
+          <div class="arch-node"><span>Tools &amp; Web</span><small>System / files / search</small></div>
+        </div>
+        <div class="arch-services">
+          <div class="arch-node"><span>Memory</span><small>Persistent facts</small></div>
+          <div class="arch-node"><span>Chat Database</span><small>Conversation data</small></div>
+          <div class="arch-node"><span>Voice Pipeline</span><small>STT ↔ TTS</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark">
+      <div class="page-shell narrow">
+        <p class="eyebrow">HYBRID ROUTING</p>
+        <h2>One core, different execution paths.</h2>
+        <p>
+          In Hybrid mode, the IRIS Core can decide whether a task should use local
+          intelligence, cloud intelligence, or supporting tools. The user can also
+          bypass intelligent routing by explicitly selecting Local or Cloud mode.
+        </p>
+        <p>
+          The goal is not to restrict the router, but to give the user control over
+          whether the router is allowed to choose the execution path.
+        </p>
+      </div>
+    </section>
+
+    <section class="section page-shell">
+      <div class="section-heading"><p class="eyebrow">ARCHITECTURAL COMPONENTS</p><h2>Designed as replaceable layers.</h2></div>
+      <div class="feature-grid two">
+        <article class="card"><h3>IRIS Core</h3><p>The orchestration and routing layer that coordinates models, tools, context and execution mode.</p></article>
+        <article class="card"><h3>Model Layer</h3><p>Local and cloud models can be treated as interchangeable intelligence providers.</p></article>
+        <article class="card"><h3>Memory Layer</h3><p>Stores persistent information that IRIS or the user chooses to retain.</p></article>
+        <article class="card"><h3>Chat Database</h3><p>Stores conversation and chat data separately from persistent memory.</p></article>
+        <article class="card"><h3>Tool Layer</h3><p>Provides access to system status, applications, files and web search.</p></article>
+        <article class="card"><h3>Voice Layer</h3><p>Connects listening, speech-to-text, processing, text-to-speech and voice output.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="page-shell footer-inner"><div><strong>IRIS</strong><p>Intelligent Response &amp; Interaction System</p></div><div class="footer-links"><a href="features.html">Features</a><a href="modes.html">Modes</a><a href="documentation.html">Docs</a><a href="https://github.com/lokendradhote/IRIS" target="_blank" rel="noopener">GitHub ↗</a></div><p class="copyright">© 2026 IRIS Project</p></div></footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

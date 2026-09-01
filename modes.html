@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="IRIS Local, Cloud and Hybrid execution modes.">
+  <title>Modes — IRIS</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-mark">IRIS</span><span class="brand-subtitle">Intelligent Response &amp; Interaction System</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="site-nav" id="siteNav">
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="features.html">Features</a><a href="architecture.html">Architecture</a><a class="active" href="modes.html">Modes</a><a href="documentation.html">Documentation</a><a class="nav-github" href="https://github.com/lokendradhote/IRIS" target="_blank" rel="noopener">GitHub ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero page-shell">
+      <p class="eyebrow">EXECUTION MODES</p>
+      <h1>Choose how IRIS works.</h1>
+      <p class="lead">The user decides whether IRIS should route intelligently or use one execution environment explicitly.</p>
+    </section>
+
+    <section class="section page-shell">
+      <div class="mode-grid">
+        <article class="mode-card">
+          <span class="mode-label">MODE 01</span>
+          <h2>Local</h2>
+          <p>Use local AI execution only.</p>
+          <ul>
+            <li>Local model is activated.</li>
+            <li>Useful when privacy or offline capability is important.</li>
+            <li>Cloud execution is not selected for the task.</li>
+            <li>Inference uses device resources.</li>
+          </ul>
+        </article>
+
+        <article class="mode-card mode-featured">
+          <span class="mode-label">MODE 02</span>
+          <h2>Hybrid</h2>
+          <p>Allow the IRIS Core to intelligently choose.</p>
+          <ul>
+            <li>Local and cloud execution can work together.</li>
+            <li>The IRIS Core acts as the routing layer.</li>
+            <li>Best suited for efficient, adaptive operation.</li>
+            <li>The user explicitly grants the router this freedom.</li>
+          </ul>
+        </article>
+
+        <article class="mode-card">
+          <span class="mode-label">MODE 03</span>
+          <h2>Cloud</h2>
+          <p>Use cloud AI execution only.</p>
+          <ul>
+            <li>Cloud model is activated.</li>
+            <li>Local inference is not used for the selected task.</li>
+            <li>Useful when you do not want local compute resources consumed.</li>
+            <li>Suitable when cloud intelligence is preferred.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-dark">
+      <div class="page-shell narrow">
+        <p class="eyebrow">WHY THREE MODES?</p>
+        <h2>Flexibility without taking control away from the user.</h2>
+        <p>
+          Hybrid mode is the intelligent option, but it is not the only option.
+          A user may have a strong reason to keep processing local, or may prefer
+          cloud execution without using local device resources.
+        </p>
+        <p>
+          IRIS therefore exposes all three modes instead of silently switching
+          between local and cloud processing without the user's chosen policy.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="page-shell footer-inner"><div><strong>IRIS</strong><p>Intelligent Response &amp; Interaction System</p></div><div class="footer-links"><a href="features.html">Features</a><a href="architecture.html">Architecture</a><a href="documentation.html">Docs</a><a href="https://github.com/lokendradhote/IRIS" target="_blank" rel="noopener">GitHub ↗</a></div><p class="copyright">© 2026 IRIS Project</p></div></footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,1005 @@
+/* =========================================================
+   IRIS OFFICIAL WEBSITE
+   Global stylesheet
+   ---------------------------------------------------------
+   Design goals:
+   - Dark, technical, premium visual identity
+   - Orange IRIS accent
+   - Responsive navigation for phones
+   - Easy manual debugging and modification
+   ========================================================= */
+
+/* ---------- 1. Design Tokens ---------- */
+:root {
+  --bg: #07080b;
+  --bg-soft: #0d0f14;
+  --surface: #11141a;
+  --surface-2: #171a21;
+  --border: rgba(255, 255, 255, 0.10);
+  --text: #f5f7fb;
+  --muted: #9ba4b5;
+  --accent: #ff7a00;
+  --accent-soft: rgba(255, 122, 0, 0.13);
+  --max-width: 1180px;
+  --radius: 18px;
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.30);
+}
+
+/* ---------- 2. Base Reset ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(circle at 80% 0%, rgba(255, 122, 0, 0.07), transparent 28rem),
+    var(--bg);
+  color: var(--text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  color: var(--muted);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ---------- 3. Reusable Layout ---------- */
+.page-shell {
+  width: min(var(--max-width), calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.narrow {
+  max-width: 850px;
+}
+
+.section {
+  padding: 100px 0;
+}
+
+.section-dark {
+  background: linear-gradient(180deg, #0b0e14, #080a0e);
+  border-block: 1px solid var(--border);
+}
+
+.section-heading {
+  max-width: 760px;
+  margin-bottom: 46px;
+}
+
+.section-heading h2,
+.section h2 {
+  margin-bottom: 16px;
+}
+
+/* ---------- 4. Typography ---------- */
+.eyebrow {
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+h1 {
+  font-size: clamp(2.8rem, 7vw, 5.7rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.3rem);
+}
+
+h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.lead {
+  color: var(--text);
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  margin-bottom: 12px;
+}
+
+/* ---------- 5. Header / Navigation ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 12px 28px;
+  background: rgba(7, 8, 11, 0.88);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.brand-mark {
+  color: var(--accent);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.brand-subtitle {
+  color: var(--muted);
+  font-size: 0.78rem;
+  border-left: 1px solid var(--border);
+  padding-left: 12px;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.site-nav a {
+  color: var(--muted);
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  transition: 0.2s ease;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  color: var(--text);
+  background: var(--surface-2);
+}
+
+.site-nav .nav-github {
+  color: var(--accent);
+  border: 1px solid rgba(255, 122, 0, 0.35);
+}
+
+.nav-toggle {
+  display: none;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 9px;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  width: 20px;
+  height: 2px;
+  display: block;
+  background: currentColor;
+  margin: 4px;
+}
+
+/* ---------- 6. Home Hero ---------- */
+.hero {
+  min-height: calc(100vh - 76px);
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  align-items: center;
+  gap: 35px;
+  padding-top: 55px;
+  padding-bottom: 55px;
+}
+
+.hero h1 span {
+  color: var(--accent);
+}
+
+.hero-tagline {
+  color: var(--accent);
+  font-style: italic;
+  font-weight: 700;
+  margin: 18px 0;
+}
+
+.hero-description {
+  max-width: 680px;
+  font-size: 1.1rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 18px;
+  border-radius: 11px;
+  font-weight: 800;
+  border: 1px solid transparent;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #090909;
+}
+
+.btn-secondary {
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+/* Animated 3D-style IRIS visual.
+   This is intentionally CSS-only: no external 3D library is required. */
+.hero-visual {
+  min-height: 500px;
+  display: grid;
+  place-items: center;
+  perspective: 1100px;
+  overflow: visible;
+}
+
+.iris-scene {
+  position: relative;
+  width: 440px;
+  height: 440px;
+  transform-style: preserve-3d;
+  animation: sceneFloat 7s ease-in-out infinite;
+}
+
+.iris-orb {
+  position: absolute;
+  inset: 105px;
+  display: grid;
+  place-items: center;
+  transform-style: preserve-3d;
+  animation: orbFloat 5s ease-in-out infinite;
+}
+
+.orb-glow {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.10;
+  filter: blur(45px);
+  animation: glowPulse 3.5s ease-in-out infinite;
+}
+
+.orb-surface {
+  position: relative;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 34% 28%, rgba(255,255,255,.95) 0 2%, rgba(255,190,120,.75) 3%, transparent 15%),
+    radial-gradient(circle at 50% 50%, #ff9b3d 0 9%, #d95700 10% 17%, #551b00 18% 25%, #160b07 26% 48%, #08090c 60%);
+  border: 1px solid rgba(255, 170, 100, 0.75);
+  box-shadow:
+    inset -28px -22px 45px rgba(0,0,0,.72),
+    inset 16px 10px 25px rgba(255,255,255,.08),
+    0 0 35px rgba(255,122,0,.25),
+    0 0 100px rgba(255,122,0,.10);
+  transform: translateZ(35px);
+}
+
+.orb-surface::before,
+.orb-surface::after {
+  content: "";
+  position: absolute;
+  inset: 13px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 177, 105, .16);
+  animation: irisSpin 10s linear infinite;
+}
+
+.orb-surface::after {
+  inset: 30px;
+  border-color: rgba(255, 122, 0, .24);
+  animation-direction: reverse;
+  animation-duration: 7s;
+}
+
+.orb-highlight {
+  position: absolute;
+  width: 70px;
+  height: 35px;
+  left: 38px;
+  top: 28px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.20);
+  filter: blur(7px);
+  transform: rotate(-28deg);
+}
+
+.orb-pupil {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  left: 73px;
+  top: 73px;
+  border-radius: 50%;
+  background: #020304;
+  box-shadow: 0 0 0 7px rgba(255,122,0,.13), 0 0 28px rgba(255,122,0,.35);
+}
+
+.orb-label {
+  position: absolute;
+  z-index: 4;
+  color: rgba(255,255,255,.72);
+  font-size: .72rem;
+  font-weight: 900;
+  letter-spacing: .22em;
+  transform: translateZ(55px) translateY(118px);
+  text-shadow: 0 2px 15px #000;
+}
+
+/* Three perspective rings give the core its moving / dimensional look. */
+.iris-ring {
+  position: absolute;
+  inset: 45px;
+  border: 1px solid rgba(255,122,0,.23);
+  border-radius: 50%;
+  transform-style: preserve-3d;
+  box-shadow: 0 0 24px rgba(255,122,0,.04);
+}
+
+.ring-a {
+  animation: ringA 9s linear infinite;
+}
+
+.ring-b {
+  inset: 82px;
+  border-color: rgba(255,178,105,.20);
+  animation: ringB 6.5s linear infinite reverse;
+}
+
+.ring-c {
+  inset: 8px;
+  border-color: rgba(255,122,0,.11);
+  border-style: dashed;
+  animation: ringC 15s linear infinite;
+}
+
+.iris-halo {
+  position: absolute;
+  border: 1px solid rgba(255,122,0,.10);
+  border-radius: 50%;
+  transform-style: preserve-3d;
+}
+
+.halo-a {
+  inset: 0;
+  transform: rotateX(67deg) rotateZ(-15deg);
+  animation: haloMove 12s linear infinite;
+}
+
+.halo-b {
+  inset: 28px;
+  transform: rotateY(68deg) rotateZ(25deg);
+  animation: haloMove 16s linear infinite reverse;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 12px rgba(255,122,0,.8);
+}
+
+.p1 { left: 14%; top: 28%; animation: particleFloat 4s ease-in-out infinite; }
+.p2 { left: 80%; top: 22%; animation: particleFloat 5.5s ease-in-out infinite .5s; }
+.p3 { left: 86%; top: 70%; animation: particleFloat 4.8s ease-in-out infinite 1s; }
+.p4 { left: 19%; top: 76%; animation: particleFloat 6s ease-in-out infinite .3s; }
+.p5 { left: 51%; top: 7%; animation: particleFloat 4.2s ease-in-out infinite 1.4s; }
+
+@keyframes sceneFloat {
+  0%, 100% { transform: rotateX(0deg) rotateY(-5deg) translateY(0); }
+  50% { transform: rotateX(4deg) rotateY(7deg) translateY(-12px); }
+}
+
+@keyframes orbFloat {
+  0%, 100% { transform: translateZ(35px) translateY(0) rotateZ(0); }
+  50% { transform: translateZ(55px) translateY(-8px) rotateZ(2deg); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: .08; transform: scale(.92); }
+  50% { opacity: .18; transform: scale(1.08); }
+}
+
+@keyframes irisSpin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes ringA {
+  from { transform: rotateX(67deg) rotateZ(0deg); }
+  to { transform: rotateX(67deg) rotateZ(360deg); }
+}
+
+@keyframes ringB {
+  from { transform: rotateY(68deg) rotateZ(360deg); }
+  to { transform: rotateY(68deg) rotateZ(0deg); }
+}
+
+@keyframes ringC {
+  from { transform: rotateX(72deg) rotateY(18deg) rotateZ(0deg); }
+  to { transform: rotateX(72deg) rotateY(18deg) rotateZ(360deg); }
+}
+
+@keyframes haloMove {
+  from { transform: rotateX(67deg) rotateZ(0deg); }
+  to { transform: rotateX(67deg) rotateZ(360deg); }
+}
+
+@keyframes particleFloat {
+  0%, 100% { transform: translate3d(0,0,0); opacity: .35; }
+  50% { transform: translate3d(8px,-18px,30px); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .iris-scene,
+  .iris-orb,
+  .orb-glow,
+  .orb-surface::before,
+  .orb-surface::after,
+  .iris-ring,
+  .iris-halo,
+  .particle {
+    animation: none !important;
+  }
+}
+
+/* ---------- 7. Cards / Grids ---------- */
+.feature-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.feature-grid.three {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.feature-grid.two {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.card,
+.mode-card,
+.doc-card,
+.mini-card {
+  background: linear-gradient(145deg, rgba(255,255,255,0.035), rgba(255,255,255,0.015));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+}
+
+.card {
+  min-height: 220px;
+}
+
+.featured-card {
+  border-color: rgba(255, 122, 0, 0.45);
+  box-shadow: var(--shadow);
+}
+
+.card-icon {
+  color: var(--accent);
+  font-size: 1.8rem;
+  display: inline-block;
+  margin-bottom: 28px;
+}
+
+/* ---------- 8. Stats ---------- */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.stat {
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,0.025);
+}
+
+.stat strong {
+  display: block;
+  color: var(--accent);
+  font-size: 2.4rem;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.stat span {
+  color: var(--muted);
+}
+
+/* ---------- 9. Internal Page Hero ---------- */
+.page-hero {
+  padding-top: 110px;
+  padding-bottom: 70px;
+}
+
+.page-hero h1 {
+  max-width: 950px;
+  margin-bottom: 20px;
+}
+
+.page-hero > p:last-child {
+  max-width: 800px;
+  font-size: 1.05rem;
+}
+
+/* ---------- 10. Features Page ---------- */
+.feature-row {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 28px;
+  padding: 50px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.feature-row:first-child {
+  padding-top: 0;
+}
+
+.feature-number {
+  color: var(--accent);
+  font-size: 1.2rem;
+  font-weight: 900;
+  padding-top: 5px;
+}
+
+.feature-row h2 {
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+}
+
+.pipeline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 25px 0;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.84rem;
+}
+
+.pipeline b {
+  color: var(--accent);
+}
+
+.mini-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.mini-card {
+  padding: 20px;
+}
+
+.mini-card strong,
+.mini-card span {
+  display: block;
+}
+
+.mini-card span {
+  color: var(--muted);
+  margin-top: 5px;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 22px 0;
+}
+
+.tag-list span {
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: #ffb16d;
+  border: 1px solid rgba(255, 122, 0, 0.2);
+  font-size: 0.8rem;
+}
+
+.note,
+.callout {
+  padding: 16px 18px;
+  border-left: 3px solid var(--accent);
+  background: var(--accent-soft);
+  border-radius: 0 10px 10px 0;
+}
+
+/* ---------- 11. Architecture ---------- */
+.architecture-diagram {
+  padding: 34px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: radial-gradient(circle at center, rgba(255,122,0,0.06), transparent 50%), var(--surface);
+  text-align: center;
+}
+
+.arch-node {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px;
+  background: var(--surface-2);
+}
+
+.arch-node span,
+.arch-node small {
+  display: block;
+}
+
+.arch-node span {
+  font-weight: 800;
+}
+
+.arch-node small {
+  color: var(--muted);
+  margin-top: 5px;
+}
+
+.user-node,
+.core-node {
+  max-width: 380px;
+  margin-inline: auto;
+}
+
+.core-node {
+  margin-top: 18px;
+  border-color: rgba(255,122,0,0.5);
+}
+
+.arch-arrow {
+  color: var(--accent);
+  font-size: 1.5rem;
+  margin: 8px;
+}
+
+.arch-branches,
+.arch-services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 12px;
+}
+
+/* ---------- 12. Modes ---------- */
+.mode-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.mode-card {
+  min-height: 390px;
+}
+
+.mode-featured {
+  border-color: rgba(255, 122, 0, 0.55);
+  box-shadow: var(--shadow);
+}
+
+.mode-label {
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+}
+
+.mode-card h2 {
+  margin: 16px 0 10px;
+}
+
+.mode-card ul {
+  margin-top: 24px;
+  padding-left: 20px;
+  color: var(--muted);
+}
+
+.mode-card li {
+  margin-bottom: 9px;
+}
+
+/* ---------- 13. Documentation ---------- */
+.docs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.doc-card {
+  min-height: 190px;
+  transition: 0.2s ease;
+}
+
+.doc-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255,122,0,0.4);
+}
+
+.doc-card > span {
+  color: var(--accent);
+  font-weight: 900;
+  font-size: 0.8rem;
+}
+
+.doc-card h2 {
+  font-size: 1.5rem;
+  margin: 15px 0 8px;
+}
+
+/* ---------- 14. Quote / CTA ---------- */
+.quote-box {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 18px;
+  margin-top: 42px;
+  padding: 30px;
+  border: 1px solid rgba(255,122,0,0.25);
+  background: var(--accent-soft);
+  border-radius: var(--radius);
+}
+
+.quote-box > span {
+  color: var(--accent);
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.cta-section {
+  text-align: center;
+}
+
+.cta-section p {
+  max-width: 650px;
+  margin-inline: auto;
+}
+
+/* ---------- 15. Footer ---------- */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 40px 0;
+  background: #050609;
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 30px;
+}
+
+.footer-inner strong {
+  color: var(--accent);
+}
+
+.footer-inner p {
+  font-size: 0.82rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-links a {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+}
+
+.copyright {
+  white-space: nowrap;
+}
+
+/* ---------- 16. Responsive Design ---------- */
+@media (max-width: 950px) {
+  .site-header {
+    padding-inline: 18px;
+  }
+
+  .brand-subtitle {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .site-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 12px;
+    background: rgba(7, 8, 11, 0.98);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .site-nav.open {
+    display: flex;
+  }
+
+  .site-nav a {
+    padding: 13px 14px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-description {
+    margin-inline: auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .feature-grid.three,
+  .mode-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .docs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .arch-branches,
+  .arch-services {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .page-shell {
+    width: min(100% - 28px, var(--max-width));
+  }
+
+  .section {
+    padding: 70px 0;
+  }
+
+  .page-hero {
+    padding-top: 75px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 75px;
+  }
+
+  .hero-visual {
+    min-height: 350px;
+  }
+
+  .iris-scene {
+    width: 330px;
+    height: 330px;
+  }
+
+  .iris-orb {
+    inset: 82px;
+  }
+
+  .orb-surface {
+    width: 145px;
+    height: 145px;
+  }
+
+  .orb-pupil {
+    width: 34px;
+    height: 34px;
+    left: 55px;
+    top: 55px;
+  }
+
+  .orb-label {
+    transform: translateZ(45px) translateY(92px);
+  }
+
+  .iris-ring.ring-a {
+    inset: 34px;
+  }
+
+  .iris-ring.ring-b {
+    inset: 60px;
+  }
+
+  .feature-grid.two,
+  .mini-grid,
+  .docs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .feature-number {
+    padding-top: 0;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .architecture-diagram {
+    padding: 18px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .copyright {
+    white-space: normal;
+  }
+}
