@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://iris-ai-core.vercel.app/</loc>
+  </url>
+
+  <url>
+    <loc>https://iris-ai-core.vercel.app/about.html</loc>
+  </url>
+
+  <url>
+    <loc>https://iris-ai-core.vercel.app/features.html</loc>
+  </url>
+
+  <url>
+    <loc>https://iris-ai-core.vercel.app/architecture.html</loc>
+  </url>
+
+  <url>
+    <loc>https://iris-ai-core.vercel.app/modes.html</loc>
+  </url>
+
+  <url>
+    <loc>https://iris-ai-core.vercel.app/documentation.html</loc>
+  </url>
+
+</urlset>
